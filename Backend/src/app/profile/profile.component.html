@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light bg-secondary">
+  <div class="container-fluid">
+      <h4 style="color:aliceblue">My Profile </h4>
+  </div>
+</nav>
+<div class="container my-3">
+
+
+<table class="table table-warning ">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <td>{{userDetails.userName| titlecase}}</td>
+    </tr>
+    <tr>
+      <th>Account Number</th>
+      <td>{{userDetails.accountNumber}}</td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td>{{userDetails.location | titlecase}}</td>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <td>{{userDetails.phone}}</td>
+    </tr>
+    <tr>
+      <th>Active status</th>
+      <td>{{!userDetails.isFreeze}}</td>
+    </tr>
+    <tr>
+      <th>Created Date</th>
+      <td>{{userDetails.createdDate| date:'short'}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

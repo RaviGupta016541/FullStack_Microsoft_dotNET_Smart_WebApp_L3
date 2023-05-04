@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="border border-primary p-3 rounded-3 " [formGroup]="sendMoneyForm"(ngSubmit)="onSubmit()">
+
+      <div class="row g-0">
+          <div class="col text-center p-2 mb-3 bg-light">
+              <span class="fs-3">Send Money</span>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col mb-3">
+              <label for="ToAccountNumber" class="form-label">Account Number of Receiver</label>
+              <input type="number" class="form-control" id="ToAccountNumber" placeholder="Enter Account Number whose you want to send money" formControlName="ToAccountNumber">
+              <div class="form-text text-danger" *ngIf="ToAccountNumber.errors?.['required'] && (ToAccountNumber.touched || ToAccountNumber.dirty)">
+                  Account Number is Required
+              </div>
+
+              <div class="form-text text-danger"
+              *ngIf="ToAccountNumber.errors?.['minlength'] || ToAccountNumber.errors?.['maxlength']
+          && (ToAccountNumber.touched || ToAccountNumber.dirty)">
+          Amount should be atleast 6 and at the max 15 characters long
+        </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col mb-3">
+              <label for="Amount" class="form-label">Amount</label>
+              <input type="number" class="form-control" id="Amount" placeholder="Enter Pay Amount " formControlName="Amount">
+                <div class="form-text text-danger" *ngIf="Amount.errors?.['required'] && (Amount.touched || Amount.dirty)">
+                  Amount is Required
+                </div>
+                <div class="form-text text-danger"
+              *ngIf="Amount.errors?.['min'] || Amount.errors?.['max']
+          && (Amount.touched || Amount.dirty)">
+          Amount should be in range 1 to 1 Lakh
+        </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-6 offset-3">
+              <div class="d-grid">
+                  <button type="submit" [disabled]="sendMoneyForm.invalid" class="btn btn-primary">Send</button>
+              </div>
+          </div>
+      </div>
+
+  </form>
+</div>
+

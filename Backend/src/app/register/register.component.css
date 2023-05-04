@@ -1,0 +1,14 @@
+form{
+    width: 500px;
+    align-items: center;
+
+  background-color: #98C7A4;
+}
+.container{
+  margin-top: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

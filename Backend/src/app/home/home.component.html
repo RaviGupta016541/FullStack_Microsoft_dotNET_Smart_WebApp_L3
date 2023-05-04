@@ -1,0 +1,127 @@
+
+
+<div class="text-center" *ngIf="!shareData.isValidUser">
+  <h1 id="welcome">Welcome To</h1>
+    <img  id="logo"  src="../../assets/Images/RaviBankImage.png">
+  </div>
+  <!-- carousel -->
+
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://images.unsplash.com/photo-1559067096-d109b66fd5af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGxvYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Mortgage Loan</h5>
+          <p>For taking benefit of lower interest rate.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://images.unsplash.com/photo-1559067341-04a52c7d06d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxvYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>House Loan</h5>
+          <p>Avail home loans up to Rs.10 crore with interest rates starting at 6.90% p.a. with additional benefits.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1559067096-49ebca3406aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Investment</h5>
+          <p>Short-term investments at minimize risk.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Account Balance</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="accountBalance>-1;else elseBlockOfShowBalance">
+        {{accountBalance|currency:"INR"}}
+      </div>
+      <ng-template #elseBlockOfShowBalance>
+        <div class="modal-body">
+          Opps! something went wrong
+        </div>
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="container" *ngIf="shareData.isValidUser">
+    <div class="d-grid gap-2  d-md-block text-center my-3">
+
+ <button type="button" class="btn btn-block btn-success mx-3" (click)="CheckBalance()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Check Balance
+</button>
+    
+      <button type="button"
+          class="btn btn-block btn-success mx-3" (click)="chequeBook()">
+          Make a request for cheque book
+      </button>
+
+
+  </div>
+  </div>
+
+
+  <div class="container my-3">
+  <div class="row">
+    <div class="col-5">
+      <img id="personalLoan" class="rounded float-left" src="https://images.unsplash.com/photo-1584134239909-eb4800257d6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fGxvYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+    </div>
+    <div class="col-7 fplone p-3">
+      <h1>Flexible Personal Loan</h1>
+      <P>✓ For Salaried and Self-Employed <BR>
+        ✓ From ₹1,000 upto ₹3 Lakhs <BR>
+        ✓ 100% Online Process <BR>
+        ✓ 10-Minute Disbursal <BR>
+        ✓ Direct Bank Transfer</P>
+
+    </div>
+  </div>
+
+  <div class="row my-5 p-1">
+    <div class="col-6 fplone p-2">
+      <h1>Documents Required</h1>
+      <p> Photo (Selfie) <br>
+        Identity Proof (PAN)<br>
+        Address Proof (Aadhaar, Passport)<br>
+        Latest bank statement as Proof of Income (for certain products)
+        </p>
+      </div>
+    <div class="col-6 " >
+      <img  class="documentImg img-fluid rounded float-right" src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdW1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    max-width: 100%;
+    border-radius: 0;
+    vertical-align: middle;
+  }
+  h5{
+    font-style: italic;
+    color: tomato;
+  }
+  h1{
+    color:rgb(1, 124, 165);
+  }
+  h4{
+    color:rgb(1, 124, 165);
+  }

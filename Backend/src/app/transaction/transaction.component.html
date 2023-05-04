@@ -1,0 +1,30 @@
+
+<div class="container text-center table-responsive  " >
+<div class="Check" *ngIf="allTransaction.length==0;">
+<h1> Your future transaction will show here</h1>
+</div>
+
+<table class="table table-success   table-striped my-3 " >
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Date</th>
+      <th scope="col">credit/debit</th>
+      <th scope="col">Account Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="align-middle" *ngFor="let i of allTransaction.slice(0,more ? undefined : 10);let ind=index">
+      <td >{{ind+1}}</td>
+      <td >{{i.transactionDate| date:'medium'}}</td>
+      <td  style="color: red;" *ngIf="this.shareData.AccountNumber == i.fromAccountNumber;else elseOfProcessing; " >(debit) {{i.amount| currency:'INR'}}</td>
+      <td *ngIf="this.shareData.AccountNumber == i.toAccountNumber;else elseOfProcessing1; ">{{i.fromAccountNumber}}</td>
+      <ng-template #elseOfProcessing> <td style="color: green;"> (credit)  {{i.amount| currency:'INR'}}</td></ng-template>
+      <ng-template #elseOfProcessing1> <td >{{i.toAccountNumber}}</td></ng-template>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="text-center">
+  <button class="btn btn-info" (click)="more = !more">{{ more ? 'less':'more' }}</button>
+</div>

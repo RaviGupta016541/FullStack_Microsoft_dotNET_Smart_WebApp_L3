@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light bg-secondary">
+    <div class="container-fluid">
+        <h4 style="color:aliceblue">Admin Dashbord </h4>
+    </div>
+</nav>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+
+        <th scope="col">S.No.</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Account Number</th>
+            <th scope="col">Account Balance</th>
+            <th scope="col">Location</th>
+            <th scope="col">Phone</th>
+            <th scope="col">IsFreeze</th>
+            <th scope="col">IsAdmin</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+
+    <tbody class="">
+        <tr *ngFor="let row of UsersData;let i=index">
+            <th>{{i+1}}</th>
+            <th>{{row.userName | titlecase}}</th>
+            <td>{{row.accountNumber}}</td>
+            <td>{{row.accountBalance| currency:'INR'}}</td>
+            <td>{{row.location| titlecase}}</td>
+            <td>{{row.phone}}</td>
+            <td>{{row.isFreeze}}</td>
+            <td>{{row.isAdmin}}</td>
+            <td>{{row.createdDate | date:'medium'}}</td>
+            <td>
+                <button class="btn btn-info my-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(row.userID)">{{row.isFreeze?'Unfreeze':'Freeze'}}</button>
+                <button  (click)="deleteUser(row.userID)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="numberOfUser" >  Total Number of Users = {{UsersData.length}}</h3>

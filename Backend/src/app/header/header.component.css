@@ -1,0 +1,85 @@
+
+ .navbar-toggler:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  margin-left: auto;
+}
+.col-md-3
+{
+  display: inline-block;
+  margin-left:-4px;
+}
+.carousel-indicators .active {
+  background-color: blue;
+}
+.col-md-3 img{
+  width: auto;
+  height: 200px;
+}
+body .carousel-indicator li{
+  background-color: blue;
+}
+body .carousel-indicators{
+  bottom: -40px;
+}
+.carousel-indicators li {
+  background-color: #7f71e3;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+  background-color: blue;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+  top: auto;
+  bottom: auto;
+  padding-top: 222px;
+}
+body .no-padding{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+#categoryName{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(50, 50, 230);
+  padding:1px;
+  width: 10%;
+  margin:auto;
+  display:block;
+  text-align:center;
+  margin-top:35px;
+  margin-bottom:5px;
+}
+.btn{
+  float:right;
+  display:inline-block;
+  margin: 2px;
+}
+#logo{
+  width: 111px;
+  height: 43px;
+}
+.navbar-brand
+{
+  padding: 0;
+}
+
+
+.activeLink
+{
+
+  color:rgb(249, 249, 270)
+}
+
+#cartLogo{
+  width:50px;
+  height:37px;
+  margin-top: 2px;
+  margin-left: 9px;
+}
+#cartBtn{
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,21 @@
+td,th
+{text-align: center;
+  vertical-align: middle;
+
+}
+ .ng-touched
+{
+  border-color: #dc3545;
+  box-shadow:red;
+}
+ .ng-valid
+{
+  border-color:blue;
+}
+#numberOfUser
+{
+  color: blue;
+  text-align: center;
+  margin-top:30px ;
+
+}
